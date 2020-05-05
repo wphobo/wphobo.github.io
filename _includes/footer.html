@@ -1,0 +1,16 @@
+{% comment %} Footer {% endcomment %}
+<footer class="page-footer">
+  {% comment %} Tertiary navigation menu {% endcomment %}
+  {% include navigation/tertiary.html %}
+
+  {% comment %} Copyright info {% endcomment %}
+  <p class="copyright">Copyright &copy; All rights reserved {{ site.separator }} {{ site.time | date: '%Y' }} {{ site.separator }} <a href="{{ '/' | prepend: site.baseurl }}" rel="home">{{ site.title }}</a></p>
+</footer>
+
+{% comment %} Page bottom JavaScripts {% endcomment %}
+{% include js-bottom.html %}
+
+{% comment %} Yandex.Metrika {% endcomment %}
+{% if jekyll.environment == 'production' or site.environment == 'production' %}
+  {% include yandex-metrika.html %}
+{% endif %}

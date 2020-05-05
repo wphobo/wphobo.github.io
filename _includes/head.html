@@ -1,0 +1,35 @@
+{% comment %} Head {% endcomment %}
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# object: http://ogp.me/ns/object# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+  {% comment %} Top metadata {% endcomment %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  {% comment %} Title {% endcomment %}
+  <title>{% if page.title %}{{ page.title }} {{ site.separator }} {{ site.title }}{% else %}{{ site.title }} {{ site.separator }} {{ site.tagline }}{% endif %}</title>
+
+  {% comment %} Resource hints {% endcomment %}
+  {% include resource-hints.html %}
+
+  {% comment %} Metadata {% endcomment %}
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="keywords" content="{% if page.tags %}{{ page.tags | array_to_sentence_string }}{% else %}{{ site.keywords | array_to_sentence_string }}{% endif %}">
+
+  {% comment %} Stylesheets {% endcomment %}
+  {% include stylesheets.html %}
+
+  {% comment %} Page top JavaScripts {% endcomment %}
+  {% include js-top.html %}
+
+  {% comment %} Favicons {% endcomment %}
+  {% include favicons.html %}
+
+  {% comment %} Links {% endcomment %}
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
+
+  {% comment %} Google Analytics {% endcomment %}
+  {% if jekyll.environment == 'production' or site.environment == 'production' %}
+    {% include google-analytics.html %}
+  {% endif %}
+</head>

@@ -1,0 +1,107 @@
+# Site settings
+title: WP Hobo
+tagline: Professional WordPress & WooCommerce Development
+description: Professional WordPress & WooCommerce Development
+keywords: [WordPress, WooCommerce, PHP, MySQL, HTML, CSS, Sass, JavaScript, AJAX, jQuery]
+language: en
+version: 1.0.0
+email: "wphobo@gmail.com"
+environment: production # development or production
+
+# Author info
+author:
+  name: WP Hobo
+  url: https://wphobo.com/
+  email: "wphobo@gmail.com"
+  skype:
+  upwork:
+  themeforest:
+  codecanyon:
+  facebook:
+  twitter:
+  linkedin:
+  instagram:
+  youtube:
+  github: https://github.com/wphobo
+  bitbucket:
+  gitlab:
+
+# Collections
+collections: []
+
+# Include
+include:
+  - .htaccess
+
+# Exclude
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - CNAME
+  - .editorconfig
+  - .gitignore
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - node_modules/
+  - README.md
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Theme
+theme: minima
+
+# Plugins
+whitelist: []
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-paginate
+
+# Conversion
+incremental: false
+
+# Serving
+baseurl:
+url: https://wphobo.github.io
+# url: https://wphobo.com/
+
+# Output configuration
+permalink: /blog/:categories/:title/
+paginate_path: /blog/page:num/
+paginate: 10
+excerpt_separator: <!-- more -->
+timezone: Europe/Kiev
+
+# Defaults
+defaults:
+-
+  scope:
+    type: posts
+  values:
+    layout: post
+    comments: true
+-
+  scope:
+    type: pages
+  values:
+    layout: page
+
+# Compress HTML
+compress_html:
+  clippings: all
+  comments: ['<!-- ', ' -->']
+
+# Sass/SCSS
+sass:
+  sass_dir: assets/scss
+  style: compressed
+
+# Miscellaneous
+separator: '&middot;'

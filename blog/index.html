@@ -1,0 +1,60 @@
+---
+layout: default
+title: Blog
+nav: primary
+order: 70
+---
+
+{% if paginator.total_posts > 0 %}
+  {% comment %} The loop {% endcomment %}
+  {% for post in paginator.posts %}
+    <section class="post-preview">
+      <header class="post-header">
+        <h2 class="post-title">
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link" rel="bookmark">{{ post.title }}</a>
+        </h2>
+
+        <p class="post-meta">
+          Published&thinsp;
+          <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          {% if post.author %}
+            <span class="post-author">{{ post.author }}</span>
+          {% endif %}
+        </p>
+      </header>
+
+      <article class="post-excerpt">
+        {{ post.excerpt }}
+        <a href="{{ post.url | prepend: site.baseurl }}" class="read-more" rel="bookmark">&raquo; Read more &raquo;</a>
+      </article>
+
+      <footer class="post-extra"></footer>
+    </section>
+  {% endfor %}
+
+  {% comment %} Pagination links {% endcomment %}
+  {% if paginator.total_posts > paginator.per_page %}
+    <nav class="pagination">
+        {% comment %} Previous page {% endcomment %}
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination-link" rel="bookmark">Previous</a>
+        {% else %}
+          <a href="javascript:void(0);" class="pagination-link">Previous</a>
+        {% endif %}
+
+        {% comment %} Page number {% endcomment %}
+        <span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+        {% comment %} Next page {% endcomment %}
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination-link" rel="bookmark">Next</a>
+        {% else %}
+          <a href="javascript:void(0);" class="pagination-link">Next</a>
+        {% endif %}
+    </nav>
+  {% endif %}
+{% else %}
+  <h2>Nothing found</h2>
+
+  <p>It seems we can't find any posts.</p>
+{% endif %}

@@ -1,0 +1,41 @@
+// Variables
+// Colors
+$color__black: #1e272e;
+$color__white: #fff;
+$color__transparent: transparent;
+$color__red: #ff5e57;
+$color__yellow: #ffdd59;
+$color__dark-blue: #0a3d62;
+$color__blue: #059bd0;
+$color__blue-green: #34e7e4;
+$color__grey: #d2dae2;
+
+$color__background-body: $color__white;
+$color__background-hr: $color__grey;
+$color__background-button: $color__grey;
+$color__background-pre: $color__transparent;
+$color__background-ins: $color__grey;
+
+$color__text-main: $color__black;
+$color__text-input: #666;
+$color__text-input-focus: #111;
+
+$color__link: $color__blue;
+$color__link-visited: $color__blue;
+$color__link-hover: $color__blue;
+
+$color__border-button: #ccc #ccc #bbb;
+$color__border-button-hover: #ccc #bbb #aaa;
+$color__border-button-focus: #aaa #bbb #bbb;
+$color__border-input: #ccc;
+$color__border-abbr: #666;
+
+// Typography
+$font__main: 'Special Elite', cursive;
+$font__cursive: 'Homemade Apple', cursive;
+$font__serif: 'Vollkorn', serif;
+
+$font__code: 'Courier Prime', monospace;
+$font__pre: $font__code;
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.5;

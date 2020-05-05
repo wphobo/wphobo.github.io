@@ -1,0 +1,16 @@
+{% comment %} Primary navigation menu {% endcomment %}
+<nav class="nav-primary">
+  {% comment %} Brand {% endcomment %}
+  <a href="{{ '/' | prepend: site.baseurl }}" class="nav-link brand" rel="home">{{ site.title }}</a>
+
+  {% comment %} Menu items {% endcomment %}
+  {% comment %} Assign site pages to 'links' variable {% endcomment %}
+  {% assign links = site.pages | sort: 'order' %}
+
+  {% for link in links %}
+    {% comment %} Display links with the 'order' more than 9 {% endcomment %}
+    {% if link.order > 9 %}
+      <a href="{{ link.url | prepend: site.baseurl }}" class="nav-link{% if page.url == link.url %} active{% endif %}" rel="bookmark">{{ link.title }}{% if page.url == link.url %}{% endif %}</a>
+    {% endif %}
+  {% endfor %}
+</nav>

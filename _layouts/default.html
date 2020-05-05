@@ -1,0 +1,28 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.language }}">
+  {% comment %} Head {% endcomment %}
+  {% include head.html %}
+
+  <body>
+    <div class="container">
+      {% comment %} Header {% endcomment %}
+      {% include header.html %}
+
+      {% comment %} Content {% endcomment %}
+      <main class="page-main">
+        {{ content }}
+      </main>
+
+      {% comment %} Sidebar {% endcomment %}
+      {% include sidebar.html %}
+
+
+      {% comment %} Footer {% endcomment %}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

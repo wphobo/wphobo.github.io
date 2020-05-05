@@ -1,0 +1,158 @@
+// Site
+html {
+  overflow-y: scroll;
+}
+
+body {
+  margin: 0;
+  font-family: $font__main;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $color__text-main;
+  background-color: $color__background-body;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Structure
+.page-header,
+.page-main,
+.page-sidebar,
+.page-footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.page-header,
+.page-footer {
+  font-family: $font__serif;
+}
+
+.page-header {
+  grid-area: header;
+  padding: 0 1rem;
+  margin-top: 6rem;
+}
+
+.page-main {
+  grid-area: main;
+  margin-top: 5rem;
+}
+
+.page-sidebar {
+  grid-area: sidebar;
+  padding-top: 3rem;
+  font-family: $font__serif;
+  font-size: 0.9375rem;
+}
+
+.page-footer {
+  grid-area: footer;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 7rem;
+  font-size: .875rem;
+}
+
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 33% 33% 30%;
+  row-gap: 1%;
+  column-gap: 2%;
+  grid-template-areas:
+    "header header header"
+    "main main sidebar"
+    "footer footer footer";
+}
+
+@media (max-width: 36rem) {
+  .page-header,
+  .page-main {
+    margin-top: 2rem;
+  }
+
+  .page-footer {
+    margin-top: 3rem;
+  }
+
+  .container {
+    max-width: 27rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
+  }
+}
+
+@media (min-width: 36rem) {
+  .container {
+    max-width: 33rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
+  }
+}
+
+@media (min-width: 48rem) {
+  .container {
+    max-width: 45rem;
+    grid-template-areas:
+      "header header header"
+      "main main main"
+      "sidebar sidebar sidebar"
+      "footer footer footer";
+  }
+}
+
+@media (min-width: 62rem) {
+  .container {
+    max-width: 60rem;
+    grid-template-areas:
+      "header header header"
+      "main main sidebar"
+      "footer footer footer";
+  }
+}
+
+@media (min-width: 75rem) {
+  .container {
+    max-width: 72rem;
+    grid-template-areas:
+      "header header header"
+      "main main sidebar"
+      "footer footer footer";
+  }
+}
+
+// Posts
+.post-preview:not(:last-child) {
+  margin-bottom: 6rem;
+}
+
+// Post meta
+.post-meta {
+  font-size: 0.875rem;
+}
+.post-date {
+  font-size: 1.125rem;
+  font-style: italic;
+  background-color: $color__yellow;
+}
+
+.read-more {
+  font-size: 0.9375rem;
+  font-style: italic;
+}
+
+// Footer
+.copyright {
+  font-style: italic;
+}
